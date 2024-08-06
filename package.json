@@ -4,7 +4,10 @@
   "description": "Inventory application using express js and postgresql",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass public/home.scss public/home.css --watch",
+    "start": "node app.js",
+    "dev": "npm-run-all --parallel sass start"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +18,8 @@
     "express": "^4.19.2",
     "express-async-handler": "^1.2.0",
     "express-validator": "^7.1.0",
-    "pg": "^8.12.0"
+    "npm-run-all": "^4.1.5",
+    "pg": "^8.12.0",
+    "sass": "^1.77.8"
   }
 }

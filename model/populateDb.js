@@ -10,7 +10,6 @@ const SQL = `CREATE TABLE IF NOT EXISTS showtype(
 );
 CREATE TABLE IF NOT EXISTS showcategory(
     category_id integer primary key generated always as identity,
-    showtype_id integer references showtype(type_id),
     category_name varchar(255) unique 
 );
 CREATE TABLE IF NOT EXISTS showcountry(
@@ -24,7 +23,18 @@ CREATE TABLE IF NOT EXISTS show(
     showcountry_id integer references showcountry(country_id),
     show_name varchar(255),
     show_rating integer
-);`;
+);
+insert into showtype (type_name) values ('MOVIE'), ('TV_SHOW');
+
+insert into showcategory (category_name) values ('Action'), ('Comedy'), ('Romance');
+
+insert into showcountry (country_name) values ('China'), ('Japan'), ('USA');
+
+insert into show (show_type_id, showcategory_id, showcountry_id, show_name, show_rating) values ((select type_id from showtype
+where type_name = 'MOVIE'), (select category_id from showcategory where category_name = 'Action'), (select country_id from showcountry 
+where country_name = 'USA'), 'Shrek', 9);
+
+`;
 
 async function populate(){
     try{

@@ -1,0 +1,9 @@
+@import './variables.scss';
+
+body{
+    &{.head-container{
+        @include header-style;
+    }}
+    padding: 0;
+    margin: 0;
+}

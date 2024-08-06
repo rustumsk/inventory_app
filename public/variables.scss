@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$primary-color: #221F1F;
+$secondary-color: #F5F5F1;
+$third-color: #BB1D24;
+$fourth-color: #E50914;
+$font: 'Bebas Neue';
+
+@mixin header-style {
+    height: 5rem;
+    display: flex;
+    background-color: #221F1F;
+    &{.title{
+        flex: 3;
+        @extend %section-style;
+        font-size: 2rem;
+    }}
+    &{.home{
+        flex: 1;
+        @extend %section-style;
+        font-size: 1.5rem; 
+    }}
+    &{.t-show{
+        flex: 1;
+        @extend %section-style;
+        font-size: 1.5rem; 
+    }}
+    &{.movies{
+        flex: 1;
+        @extend %section-style;
+        font-size: 1.5rem; 
+    }}
+    &{.search{
+        flex: 2.5;
+        @extend %section-style;
+        font-size: 1.5rem; 
+    }}
+}
+
+%section-style {
+    display: grid;
+    place-content: center;
+    color: $fourth-color;
+    font-family: $font;
+}

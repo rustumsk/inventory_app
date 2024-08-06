@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+body .head-container .search, body .head-container .movies, body .head-container .t-show, body .head-container .home, body .head-container .title {
+  display: grid;
+  place-content: center;
+  color: #E50914;
+  font-family: "Bebas Neue";
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+body .head-container {
+  height: 5rem;
+  display: flex;
+  background-color: #221F1F;
+}
+body .head-container .title {
+  flex: 3;
+  font-size: 2rem;
+}
+body .head-container .home {
+  flex: 1;
+  font-size: 1.5rem;
+}
+body .head-container .t-show {
+  flex: 1;
+  font-size: 1.5rem;
+}
+body .head-container .movies {
+  flex: 1;
+  font-size: 1.5rem;
+}
+body .head-container .search {
+  flex: 2.5;
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=home.css.map */
