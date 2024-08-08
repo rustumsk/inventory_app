@@ -9,37 +9,88 @@ $font: 'Bebas Neue';
 @mixin header-style {
     height: 5rem;
     display: flex;
-    background-color: #221F1F;
-    &{.title{
+    align-items: center;
+    background-color: $primary-color;
+    & .title {
         flex: 3;
         @extend %section-style;
         font-size: 2rem;
-    }}
-    &{.home{
+    }
+    & .home, & .t-show, & .movies, & .info {
         flex: 1;
         @extend %section-style;
-        font-size: 1.5rem; 
-    }}
-    &{.t-show{
-        flex: 1;
-        @extend %section-style;
-        font-size: 1.5rem; 
-    }}
-    &{.movies{
-        flex: 1;
-        @extend %section-style;
-        font-size: 1.5rem; 
-    }}
-    &{.search{
+        font-size: 1.5rem;
+    }
+    & .search {
         flex: 2.5;
-        @extend %section-style;
-        font-size: 1.5rem; 
-    }}
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    & .search-input {
+        padding: 0.5rem;
+        border: 1px solid $fourth-color;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        outline: none;
+        color: $secondary-color;
+        background-color: $primary-color;
+        transition: border-color 0.3s;
+        &:focus {
+            border-color: $third-color;
+        }
+    }
+    
+    & .search-button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.25rem;
+        background-color: $fourth-color;
+        color: $secondary-color;
+        font-family: $font;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: $third-color;
+        }
+    }
 }
-
 %section-style {
     display: grid;
     place-content: center;
     color: $fourth-color;
     font-family: $font;
+}
+
+@mixin footer-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color:$primary-color;
+    color: $secondary-color;
+    font-family: $font;
+    text-align: center;
+    font-size: 1rem;
+}
+
+%footer-link-style {
+    color: $fourth-color;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.f-content {
+    display: grid;
+    place-content: center;
+    
+    p {
+        margin: 0.5rem 0;
+    }
+
+    a {
+        @extend %footer-link-style;
+    }
 }

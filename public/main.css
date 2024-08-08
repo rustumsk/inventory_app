@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+.adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info, .adds .head-container .title, .sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info, .sect .head-container .title, .home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info, .home .head-container .title {
+  display: grid;
+  place-content: center;
+  color: #E50914;
+  font-family: "Bebas Neue";
+}
+
+.f-content a {
+  color: #E50914;
+  text-decoration: none;
+}
+.f-content a:hover {
+  text-decoration: underline;
+}
+
+.f-content {
+  display: grid;
+  place-content: center;
+}
+.f-content p {
+  margin: 0.5rem 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.home .head-container {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  background-color: #221F1F;
+}
+.home .head-container .title {
+  flex: 3;
+  font-size: 2rem;
+}
+.home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info {
+  flex: 1;
+  font-size: 1.5rem;
+}
+.home .head-container .search {
+  flex: 2.5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.home .head-container .search-input {
+  padding: 0.5rem;
+  border: 1px solid #E50914;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  outline: none;
+  color: #F5F5F1;
+  background-color: #221F1F;
+  transition: border-color 0.3s;
+}
+.home .head-container .search-input:focus {
+  border-color: #BB1D24;
+}
+.home .head-container .search-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #E50914;
+  color: #F5F5F1;
+  font-family: "Bebas Neue";
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.home .head-container .search-button:hover {
+  background-color: #BB1D24;
+}
+.home .home-container {
+  height: 50rem;
+}
+.home .f-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #221F1F;
+  color: #F5F5F1;
+  font-family: "Bebas Neue";
+  text-align: center;
+  font-size: 1rem;
+}
+
+.adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info, .adds .head-container .title, .sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info, .sect .head-container .title, .home .head-container .title, .home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info {
+  display: grid;
+  place-content: center;
+  color: #E50914;
+  font-family: "Bebas Neue";
+}
+
+.f-content a {
+  color: #E50914;
+  text-decoration: none;
+}
+.f-content a:hover {
+  text-decoration: underline;
+}
+
+.f-content {
+  display: grid;
+  place-content: center;
+}
+.f-content p {
+  margin: 0.5rem 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Bebas Neue";
+  color: #F5F5F1;
+  background-color: #221F1F;
+}
+
+.sect .head-container {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  background-color: #221F1F;
+}
+.sect .head-container .title {
+  flex: 3;
+  font-size: 2rem;
+}
+.sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info {
+  flex: 1;
+  font-size: 1.5rem;
+}
+.sect .head-container .search {
+  flex: 2.5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sect .head-container .search-input {
+  padding: 0.5rem;
+  border: 1px solid #E50914;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  outline: none;
+  color: #F5F5F1;
+  background-color: #221F1F;
+  transition: border-color 0.3s;
+}
+.sect .head-container .search-input:focus {
+  border-color: #BB1D24;
+}
+.sect .head-container .search-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #E50914;
+  color: #F5F5F1;
+  font-family: "Bebas Neue";
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.sect .head-container .search-button:hover {
+  background-color: #BB1D24;
+}
+.sect .info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50rem;
+  padding: 2rem;
+}
+.sect .info-container .addContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.sect .info-container .addContainer button {
+  background-color: #E50914;
+  border: none;
+  color: #F5F5F1;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.sect .info-container .addContainer button:hover {
+  background-color: #BB1D24;
+}
+.sect .info-container .addContainer button.show {
+  background-color: #BB1D24;
+}
+.sect .info-container .addContainer button.category {
+  background-color: #E50914;
+}
+.sect .info-container .addContainer button.type {
+  background-color: #BB1D24;
+}
+.sect .info-container button.update, .sect .info-container button.delete {
+  background-color: #E50914;
+  border: none;
+  color: #F5F5F1;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 1rem;
+}
+.sect .info-container button.update:hover, .sect .info-container button.delete:hover {
+  background-color: #BB1D24;
+}
+.sect .info-container button.update {
+  background-color: #E50914;
+}
+.sect .info-container button.delete {
+  background-color: #BB1D24;
+}
+.sect .f-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #221F1F;
+  color: #F5F5F1;
+  font-family: "Bebas Neue";
+  text-align: center;
+  font-size: 1rem;
+}
+
+.adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info, .adds .head-container .title, .home .head-container .title, .home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info, .sect .head-container .title, .sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info {
+  display: grid;
+  place-content: center;
+  color: #E50914;
+  font-family: "Bebas Neue";
+}
+
+.f-content a {
+  color: #E50914;
+  text-decoration: none;
+}
+.f-content a:hover {
+  text-decoration: underline;
+}
+
+.f-content {
+  display: grid;
+  place-content: center;
+}
+.f-content p {
+  margin: 0.5rem 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Bebas Neue";
+  color: #F5F5F1;
+  background-color: #BB1D24;
+}
+
+.adds .head-container {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  background-color: #221F1F;
+}
+.adds .head-container .title {
+  flex: 3;
+  font-size: 2rem;
+}
+.adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info {
+  flex: 1;
+  font-size: 1.5rem;
+}
+.adds .head-container .search {
+  flex: 2.5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.adds .head-container .search-input {
+  padding: 0.5rem;
+  border: 1px solid #E50914;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  outline: none;
+  color: #F5F5F1;
+  background-color: #221F1F;
+  transition: border-color 0.3s;
+}
+.adds .head-container .search-input:focus {
+  border-color: #BB1D24;
+}
+.adds .head-container .search-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #E50914;
+  color: #F5F5F1;
+  font-family: "Bebas Neue";
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.adds .head-container .search-button:hover {
+  background-color: #BB1D24;
+}
+.adds .add-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50rem;
+  padding: 2rem;
+}
+.adds .add-container .form {
+  background-color: #F5F5F1;
+  color: #221F1F;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.adds .add-container .form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #221F1F;
+}
+.adds .add-container .form input[type=text], .adds .add-container .form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #E50914;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  outline: none;
+  background-color: #221F1F;
+  color: #F5F5F1;
+}
+.adds .add-container .form input[type=text]:focus, .adds .add-container .form select:focus {
+  border-color: #BB1D24;
+}
+.adds .add-container .form input[type=radio] {
+  margin-right: 0.5rem;
+}
+.adds .add-container .form input[type=submit] {
+  background-color: #E50914;
+  border: none;
+  color: #F5F5F1;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.adds .add-container .form input[type=submit]:hover {
+  background-color: #BB1D24;
+}
+.adds .f-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #221F1F;
+  color: #F5F5F1;
+  font-family: "Bebas Neue";
+  text-align: center;
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=main.css.map */

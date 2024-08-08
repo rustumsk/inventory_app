@@ -1,4 +1,3 @@
-
 const getMovies = (req,res) =>{
     res.render('movies');
 }

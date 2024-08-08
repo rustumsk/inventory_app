@@ -1,18 +1,35 @@
+<link rel="stylesheet" href="./header.css">
 <header class="head-container">
+    <script>
+        const searchDirect = () => {
+            const ivalue = document.querySelector('.search-input').value;
+            window.location.href = window.location.href + `/search/${ivalue}`;
+        }
+        const homeDirect = () =>{
+            window.location.href = 'http://localhost:3000/';
+        }
+        const infoDirect = () =>{
+            window.location.href = 'http://localhost:3000/info';
+        }
+    </script>
     <section class="title">
         <span>Movie Inventory</span>
     </section>
-    <section class="home">
-        <span>Home</span>
+    <section class="home" >
+        <span onclick="homeDirect()">Home</span>
     </section>
     <section class="t-show">
         <span>Tv Shows</span>
     </section>
     <section class="movies">
-        <span>Movies</span>
+        <span">Movies</span>
+    </section>
+    <section class="info">
+        <span onclick="infoDirect()">INFO</span>
     </section>
     <section class="search">
-        <input type="text" placeholder="Search">
-        <input type="submit" value="Search">
+        <form action="/search"></form>
+        <input type="text" placeholder="Ex. Shrek" class="search-input">
+        <button type="submit" class="search-button" onclick="searchDirect()">Search</button>
     </section>
 </header>

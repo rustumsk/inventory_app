@@ -1,0 +1,82 @@
+@import './variables.scss';
+
+// General body styling
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+    color: $secondary-color;
+    background-color: $third-color;
+}
+
+// Container for the entire section
+.adds {
+    .head-container {
+        @include header-style;
+    }
+    // Container for the form
+    .add-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 50rem;
+        padding: 2rem;
+
+        // Form styling
+        .form {
+            background-color: $secondary-color;
+            color: $primary-color;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-size: 1rem;
+                color: $primary-color;
+            }
+
+            input[type="text"], select {
+                width: 100%;
+                padding: 0.5rem;
+                border: 1px solid $fourth-color;
+                border-radius: 0.25rem;
+                margin-bottom: 1rem;
+                font-size: 1rem;
+                outline: none;
+                background-color: $primary-color;
+                color: $secondary-color;
+
+                &:focus {
+                    border-color: $third-color;
+                }
+            }
+
+            input[type="radio"] {
+                margin-right: 0.5rem;
+            }
+
+            input[type="submit"] {
+                background-color: $fourth-color;
+                border: none;
+                color: $secondary-color;
+                padding: 0.75rem 1.5rem;
+                border-radius: 0.25rem;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: $third-color;
+                }
+            }
+        }
+    }
+    .f-container {
+        @include footer-style;
+    }
+}

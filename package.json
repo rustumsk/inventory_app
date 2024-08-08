@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass public/home.scss public/home.css --watch",
-    "start": "node app.js",
+    "sass": "sass public/main.scss public/main.css --watch",
+    "start": "node app.js --watch",
     "dev": "npm-run-all --parallel sass start"
   },
   "keywords": [],

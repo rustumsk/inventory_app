@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./main.css">
     <script>
         const redirect = () =>{
         window.location.href = window.location.href + "movies"
@@ -12,8 +12,12 @@
     </script>
 </head>
 <body>
-    <%- include('header') %>
-    <%= name %>
-    <button onclick="redirect()">sample</button>
+    <section class="home">
+        <%- include('header') %>
+        <section class="home-container">
+            <div>Hello</div>
+        </section>
+        <%- include('footer') %>
+    </section>
 </body>
 </html>
