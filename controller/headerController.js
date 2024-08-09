@@ -1,6 +1,12 @@
 const getInfo = (req,res) =>{
-    const option = req.query.option === 'true';
-    res.render('info', {option});
+    const aOption = req.query.aOption === 'true';
+    const uOption = req.query.uOption === 'true';
+    const dOption = req.query.dOption === 'true';
+    console.log(aOption);
+    console.log(uOption);
+    console.log(dOption);
+
+    res.render('info', {aOption, uOption, dOption});
 }
 
 module.exports = {getInfo};

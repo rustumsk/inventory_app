@@ -14,14 +14,15 @@ body {
     .head-container {
         @include header-style;
     }
-    // Container for the form
+
     .add-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 50rem;
+        height: 100vh;
         padding: 2rem;
+        gap: 1rem;
 
         // Form styling
         .form {
@@ -60,22 +61,47 @@ body {
                 margin-right: 0.5rem;
             }
 
-            input[type="submit"] {
-                background-color: $fourth-color;
-                border: none;
-                color: $secondary-color;
-                padding: 0.75rem 1.5rem;
-                border-radius: 0.25rem;
-                font-size: 1rem;
-                cursor: pointer;
-                transition: background-color 0.3s;
+            // Button container styling
+            .form-buttons {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
 
-                &:hover {
-                    background-color: $third-color;
+                // Back button styling
+                .back-btn {
+                    background-color: $primary-color;
+                    color: $secondary-color;
+                    border: none;
+                    border-radius: 0.25rem;
+                    padding: 0.5rem 1rem;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    transition: background-color 0.3s, box-shadow 0.3s;
+                    &:hover {
+                        background-color: $third-color;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    }
+                }
+
+                // Submit button styling
+                input[type="submit"] {
+                    background-color: $fourth-color;
+                    border: none;
+                    color: $secondary-color;
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 0.25rem;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+
+                    &:hover {
+                        background-color: $third-color;
+                    }
                 }
             }
         }
     }
+
     .f-container {
         @include footer-style;
     }

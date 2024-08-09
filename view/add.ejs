@@ -1,49 +1,60 @@
 <link rel="stylesheet" href="/main.css">
 <section class="adds">
-<%- include('header') %>
+    <%- include('header') %>
     <section class="add-container">
         <% if(option === 'show') { %>
-            <form action="/add" class="form" method="POST">
+            <form action="/add/show" class="form" method="POST">
                 <label for="s-title">Show Title: </label>
-                <input type="text" name="s-title" id="s-title">
+                <input type="text" name="sTitle" id="s-title">
+
                 <label for="s-type">Show Type:</label>
-                <select name="s-type" id="s-type">
-                    <option value="movies">Movie</option>
-                    <option value="tv-show">Tv Show</option>
+                <select name="sType" id="s-type">
+                    <option value="MOVIE">Movie</option>
+                    <option value="TV_SHOW">Tv Show</option>
                 </select>
+
                 <label for="s-category">Show Category: </label>
-                <select name="" id="">
-                    <option value="action">Action</option>
-                    <option value="comedy">Comedy</option>
-                    <option value="action">Romance</option>
+                <select name="sCategory" id="s-category">
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Romance">Romance</option>
                 </select>
+
                 <label for="s-country">Country: </label>
-                <select name="s-country" id="s-country">
-                    <option value="america">America</option>
-                    <option value="china">China</option>
-                    <option value="russa">Russia</option>
+                <select name="sCountry" id="s-country">
+                    <option value="USA">USA</option>
+                    <option value="China">China</option>
+                    <option value="Japan">Japan</option>
                 </select>
-                <label for="for s-rating">Show rating: </label>
-                <input type="text" name="s-rating" id="s-rating">
-                <input type="submit" value="CREATE SHOW">
+
+                <label for="s-rating">Show rating: </label>
+                <input type="text" name="sRating" id="s-rating">
+
+                <div class="form-buttons">
+                    <input type="submit" value="CREATE SHOW">
+                    <button type="button" class="back-btn" onclick="window.history.back()">Back</button>
+                </div>
             </form>
         <% } else if (option === 'category') { %>
-            <form action="/add" class="form" method="POST">
+            <form action="/add/category" class="form" method="POST">
                 <label for="s-category">Show Category:</label>
-                <input type="text" name="s-category" id="s-category" placeholder="Ex. Comedy">
-                <input type="radio" name="t-choice" id="movie" value="Movie">
-                <label for="movie">Movie</label>
-                <input type="radio" name="t-choice" id="tv-show" value="Tv Show">
-                <label for="tv-show">Tv Show</label>
-                <input type="submit">
+                <input type="text" name="category" id="category" placeholder="Ex. Comedy">
+
+                <div class="form-buttons">
+                    <input type="submit" value="CREATE CATEGORY">
+                    <button type="button" class="back-btn" onclick="window.history.back()">Back</button>
+                </div>
             </form>
         <% } else if (option === 'type') { %>
-            <form action="/add" class="form" method="POST">
+            <form action="/add/type" class="form" method="POST">
                 <label for="t-type">Type: </label>
-                <input type="text" name="t-type" id="t-type">
-                <input type="submit">
+                <input type="text" name="type" id="type">
+                <div class="form-buttons">
+                    <input type="submit" value="CREATE TYPE">
+                    <button type="button" class="back-btn" onclick="window.history.back()">Back</button>
+                </div>
             </form>
         <% } %>
     </section>
-<%- include('footer') %>
+    <%- include('footer') %>
 </section>

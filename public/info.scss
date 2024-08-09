@@ -1,6 +1,5 @@
 @import './variables.scss';
 
-// General body styling
 body {
     margin: 0;
     padding: 0;
@@ -9,83 +8,53 @@ body {
     background-color: $primary-color;
 }
 
-// Main section container
 .sect {
     .head-container {
         @include header-style;
     }
-
-    // Container for buttons and content
     .info-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 50rem;
-        padding: 2rem;
-
-        // Add Container
-        .addContainer {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-
-            button {
-                background-color: $fourth-color;
-                border: none;
-                color: $secondary-color;
-                padding: 0.75rem 1.5rem;
-                border-radius: 0.25rem;
-                font-size: 1rem;
-                cursor: pointer;
-                transition: background-color 0.3s;
-
-                &:hover {
-                    background-color: $third-color;
-                }
-
-                &.show {
-                    background-color: $third-color;
-                }
-
-                &.category {
-                    background-color: $fourth-color;
-                }
-
-                &.type {
-                    background-color: $third-color;
-                }
-            }
-        }
-
-        // Update and Delete Buttons
-        button.update, button.delete {
-            background-color: $fourth-color;
-            border: none;
-            color: $secondary-color;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.25rem;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin: 1rem;
-            
-            &:hover {
-                background-color: $third-color;
-            }
-        }
-
-        // Specific styling for Update and Delete buttons
-        button.update {
-            background-color: $fourth-color;
-        }
-
-        button.delete {
-            background-color: $third-color;
-        }
+        height: 100%;
+        gap: 1rem;
+        padding: 1rem;
     }
-
-    .f-container {
+    .button-group {
+        display: flex;
+        gap: 1rem;
+    }
+    .f-container{
         @include footer-style;
+    }
+}
+
+.action-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-family: $font;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    &:hover {
+        background-color: $secondary-color;
+        color: $fourth-color;
+        box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
+    }
+    &.show {
+        background-color: $fourth-color;
+        color: white;
+    }
+    &.category {
+        background-color: $fourth-color;
+        color: white;
+    }
+    &.type {
+        background-color: $fourth-color;
+        color: white;
     }
 }

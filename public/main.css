@@ -172,55 +172,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50rem;
-  padding: 2rem;
+  height: 100%;
+  gap: 1rem;
+  padding: 1rem;
 }
-.sect .info-container .addContainer {
+.sect .button-group {
   display: flex;
   gap: 1rem;
-  margin-bottom: 2rem;
-}
-.sect .info-container .addContainer button {
-  background-color: #E50914;
-  border: none;
-  color: #F5F5F1;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.sect .info-container .addContainer button:hover {
-  background-color: #BB1D24;
-}
-.sect .info-container .addContainer button.show {
-  background-color: #BB1D24;
-}
-.sect .info-container .addContainer button.category {
-  background-color: #E50914;
-}
-.sect .info-container .addContainer button.type {
-  background-color: #BB1D24;
-}
-.sect .info-container button.update, .sect .info-container button.delete {
-  background-color: #E50914;
-  border: none;
-  color: #F5F5F1;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin: 1rem;
-}
-.sect .info-container button.update:hover, .sect .info-container button.delete:hover {
-  background-color: #BB1D24;
-}
-.sect .info-container button.update {
-  background-color: #E50914;
-}
-.sect .info-container button.delete {
-  background-color: #BB1D24;
 }
 .sect .f-container {
   display: flex;
@@ -232,6 +190,35 @@ body {
   font-family: "Bebas Neue";
   text-align: center;
   font-size: 1rem;
+}
+
+.action-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #221F1F;
+  color: #F5F5F1;
+  font-family: "Bebas Neue";
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.action-btn:hover {
+  background-color: #F5F5F1;
+  color: #E50914;
+  box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
+}
+.action-btn.show {
+  background-color: #E50914;
+  color: white;
+}
+.action-btn.category {
+  background-color: #E50914;
+  color: white;
+}
+.action-btn.type {
+  background-color: #E50914;
+  color: white;
 }
 
 .adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info, .adds .head-container .title, .home .head-container .title, .home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info, .sect .head-container .title, .sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info {
@@ -316,8 +303,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50rem;
+  height: 100vh;
   padding: 2rem;
+  gap: 1rem;
 }
 .adds .add-container .form {
   background-color: #F5F5F1;
@@ -351,7 +339,26 @@ body {
 .adds .add-container .form input[type=radio] {
   margin-right: 0.5rem;
 }
-.adds .add-container .form input[type=submit] {
+.adds .add-container .form .form-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.adds .add-container .form .form-buttons .back-btn {
+  background-color: #221F1F;
+  color: #F5F5F1;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.adds .add-container .form .form-buttons .back-btn:hover {
+  background-color: #BB1D24;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.adds .add-container .form .form-buttons input[type=submit] {
   background-color: #E50914;
   border: none;
   color: #F5F5F1;
@@ -361,7 +368,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.adds .add-container .form input[type=submit]:hover {
+.adds .add-container .form .form-buttons input[type=submit]:hover {
   background-color: #BB1D24;
 }
 .adds .f-container {

@@ -1,0 +1,52 @@
+<script>
+    let aOption = false;
+    let uOption = false;
+    let dOption = false;
+
+    const addClick = () => {
+        aOption = !aOption;
+        window.location.href = `http://localhost:3000/info?aOption=${aOption}`;
+    }
+    const updateClick = () => {
+        uOption = !uOption;
+        window.location.href = `http://localhost:3000/info?uOption=${uOption}`;
+    }
+    const deleteClick = () => {
+        dOption = !dOption;
+        window.location.href = `http://localhost:3000/info?dOption=${dOption}`;
+    }
+    const addRedirect = (category) => {
+        window.location.href = `http://localhost:3000/add?choice=${category}`;
+    }
+</script>
+<link rel="stylesheet" href="./main.css">
+<section class="sect">
+    <%- include('header') %>
+    <section class="info-container">
+        <div class="button-group">
+            <button class="action-btn" onclick="addClick()">ADD</button>
+            <% if (locals.aOption) { %>
+                <button class="action-btn show" onclick="addRedirect('show')">ADD SHOW</button>
+                <button class="action-btn category" onclick="addRedirect('category')">ADD CATEGORY</button>
+                <button class="action-btn type" onclick="addRedirect('type')">ADD TYPE</button>
+            <% } %>
+        </div>
+        <div class="button-group">
+            <button class="action-btn" onclick="updateClick()">UPDATE</button>
+            <% if (locals.uOption) { %>
+                <button class="action-btn show">UPDATE SHOW</button>
+                <button class="action-btn category">UPDATE CATEGORY</button>
+                <button class="action-btn type">UPDATE TYPE</button>
+            <% } %>
+        </div>
+        <div class="button-group">
+            <button class="action-btn" onclick="deleteClick()">DELETE</button>
+            <% if (locals.dOption) { %>
+                <button class="action-btn show">DELETE SHOW</button>
+                <button class="action-btn category">DELETE CATEGORY</button>
+                <button class="action-btn type">DELETE TYPE</button>
+            <% } %>
+        </div>
+    </section>
+    <%- include('footer') %>
+</section>
