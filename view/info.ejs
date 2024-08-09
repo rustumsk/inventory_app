@@ -18,6 +18,9 @@
     const addRedirect = (category) => {
         window.location.href = `http://localhost:3000/add?choice=${category}`;
     }
+    const updateRedirect = (category) => {
+        window.location.href = `http://localhost:3000/update?choice=${category}`;
+    }
 </script>
 <link rel="stylesheet" href="./main.css">
 <section class="sect">
@@ -34,9 +37,9 @@
         <div class="button-group">
             <button class="action-btn" onclick="updateClick()">UPDATE</button>
             <% if (locals.uOption) { %>
-                <button class="action-btn show">UPDATE SHOW</button>
-                <button class="action-btn category">UPDATE CATEGORY</button>
-                <button class="action-btn type">UPDATE TYPE</button>
+                <button class="action-btn show" onclick="updateRedirect('show')">UPDATE SHOW</button>
+                <button class="action-btn category" onclick="updateRedirect('category')">UPDATE CATEGORY</button>
+                <button class="action-btn type" onclick="updateRedirect('type')">UPDATE TYPE</button>
             <% } %>
         </div>
         <div class="button-group">

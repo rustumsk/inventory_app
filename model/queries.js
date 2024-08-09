@@ -1,5 +1,8 @@
 const pool = require('./pool');
 
+// FOR ADDING QUIERES || INSERTING INTO DATABASE
+// STARTS HERE!!!!!!!!!!!!!!!!!!!!!!!!!
+
 const addType = async (typeName) =>{
     try{
         await pool.query('INSERT INTO SHOWTYPE (type_name) VALUES ($1)', [typeName]);
@@ -40,5 +43,9 @@ const addShow = async (showType, showCategory,showCountry, showTitle, showRating
         console.log(e);
     }
 }
+
+//ENDSS HEREEEE !!!!!!!!!!!!!!!!!!!!!!!!!
+
+
 
 module.exports = {addType, addCategory,addShow}

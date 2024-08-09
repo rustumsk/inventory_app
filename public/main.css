@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-.adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info, .adds .head-container .title, .sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info, .sect .head-container .title, .home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info, .home .head-container .title {
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+.update .head-container .home, .update .head-container .t-show, .update .head-container .movies, .update .head-container .info, .update .head-container .title, .adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info, .adds .head-container .title, .sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info, .sect .head-container .title, .home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info, .home .head-container .title {
   display: grid;
   place-content: center;
   color: #E50914;
@@ -90,7 +91,7 @@ body {
   font-size: 1rem;
 }
 
-.adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info, .adds .head-container .title, .sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info, .sect .head-container .title, .home .head-container .title, .home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info {
+.update .head-container .home, .update .head-container .t-show, .update .head-container .movies, .update .head-container .info, .update .head-container .title, .adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info, .adds .head-container .title, .sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info, .sect .head-container .title, .home .head-container .title, .home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info {
   display: grid;
   place-content: center;
   color: #E50914;
@@ -221,7 +222,7 @@ body {
   color: white;
 }
 
-.adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info, .adds .head-container .title, .home .head-container .title, .home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info, .sect .head-container .title, .sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info {
+.update .head-container .home, .update .head-container .t-show, .update .head-container .movies, .update .head-container .info, .update .head-container .title, .adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info, .adds .head-container .title, .home .head-container .title, .home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info, .sect .head-container .title, .sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info {
   display: grid;
   place-content: center;
   color: #E50914;
@@ -372,6 +373,147 @@ body {
   background-color: #BB1D24;
 }
 .adds .f-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #221F1F;
+  color: #F5F5F1;
+  font-family: "Bebas Neue";
+  text-align: center;
+  font-size: 1rem;
+}
+
+.update .head-container .home, .update .head-container .t-show, .update .head-container .movies, .update .head-container .info, .update .head-container .title, .home .head-container .title, .home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info, .sect .head-container .title, .sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info, .adds .head-container .title, .adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info {
+  display: grid;
+  place-content: center;
+  color: #E50914;
+  font-family: "Bebas Neue";
+}
+
+.f-content a {
+  color: #E50914;
+  text-decoration: none;
+}
+.f-content a:hover {
+  text-decoration: underline;
+}
+
+.f-content {
+  display: grid;
+  place-content: center;
+}
+.f-content p {
+  margin: 0.5rem 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.update .head-container {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  background-color: #221F1F;
+}
+.update .head-container .title {
+  flex: 3;
+  font-size: 2rem;
+}
+.update .head-container .home, .update .head-container .t-show, .update .head-container .movies, .update .head-container .info {
+  flex: 1;
+  font-size: 1.5rem;
+}
+.update .head-container .search {
+  flex: 2.5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.update .head-container .search-input {
+  padding: 0.5rem;
+  border: 1px solid #E50914;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  outline: none;
+  color: #F5F5F1;
+  background-color: #221F1F;
+  transition: border-color 0.3s;
+}
+.update .head-container .search-input:focus {
+  border-color: #BB1D24;
+}
+.update .head-container .search-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #E50914;
+  color: #F5F5F1;
+  font-family: "Bebas Neue";
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.update .head-container .search-button:hover {
+  background-color: #BB1D24;
+}
+.update .update-container {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 2rem;
+}
+.update .update-container .list-container {
+  height: 35rem;
+  width: 25rem;
+  background-color: #F5F5F1;
+  padding: 2rem;
+  padding-bottom: 0;
+  overflow: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.update .update-container .list-container .list {
+  background-color: #221F1F;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F5F5F1;
+  border-radius: 0.25rem;
+  font-family: "Bebas Neue";
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.update .update-container .list-container .list:hover {
+  background-color: #BB1D24;
+  color: #F5F5F1;
+  transform: scale(1.02);
+}
+.update .update-container button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #221F1F;
+  color: #E50914;
+  font-family: "Bebas Neue";
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  outline: none;
+}
+.update .update-container button:hover {
+  background-color: #F5F5F1;
+}
+.update .update-container button:focus {
+  outline: 2px solid #BB1D24;
+}
+.update .f-container {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -6,7 +6,7 @@ const aType = (req,res) =>{
 }
 const aShow = (req,res) =>{
     addShow(req.body.sType, req.body.sCategory, req.body.sCountry, req.body.sTitle, req.body.sRating);
-    res.send("Hi");
+    res.redirect('/info');
 }
 const aCategory = (req,res) =>{
     addCategory(req.body.category)
