@@ -4,6 +4,7 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: $font;
 }
 
 // Style for the update section
@@ -25,8 +26,8 @@ body {
             padding: 2rem;
             padding-bottom: 0;
             overflow: auto;
-            border-radius: 0.5rem; // Add some rounded corners
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for better visibility
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
             .list {
                 background-color: $primary-color;
@@ -38,7 +39,7 @@ body {
                 align-items: center;
                 justify-content: center;
                 color: $secondary-color;
-                border-radius: 0.25rem; // Rounded corners for individual list items
+                border-radius: 0.25rem;
                 font-family: $font;
                 font-size: 1rem;
                 transition: background-color 0.3s, transform 0.3s;
@@ -71,6 +72,103 @@ body {
 
             &:focus {
                 outline: 2px solid $third-color;
+            }
+        }
+    }
+
+    // Overlay to disable background interaction
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000; // Make sure it covers everything
+    }
+
+    // Wrapper for modal positioning
+    .modal-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001; // Above the overlay
+
+        // Style for the modal dialog
+        .modal {
+            width: 80%;
+            max-width: 600px;
+            background: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+            .modal-form {
+                display: grid;
+                gap: 1rem;
+                padding: 2rem;
+                
+                label {
+                    font-weight: bold;
+                }
+
+                input {
+                    padding: 0.5rem;
+                    border: 1px solid #ddd;
+                    border-radius: 0.25rem;
+                    width: 100%;
+                }
+
+                // Container for buttons
+                .button-container {
+                    display: flex;
+                    gap: 1rem; // Space between buttons
+
+                    // Style for submit button
+                    input[type="submit"] {
+                        background-color: $primary-color;
+                        color: $fourth-color;
+                        padding: 0.5rem 1rem;
+                        border: none;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+                        transition: background-color 0.3s;
+                        outline: none;
+
+                        &:hover {
+                            background-color: $secondary-color;
+                        }
+
+                        &:focus {
+                            outline: 2px solid $third-color;
+                        }
+                    }
+
+                    // Style for back button
+                    button {
+                        background-color: $primary-color;
+                        color: $fourth-color;
+                        padding: 0.5rem 1rem;
+                        border: none;
+                        border-radius: 0.25rem;
+                        cursor: pointer;
+                        transition: background-color 0.3s;
+                        outline: none;
+
+                        &:hover {
+                            background-color: $secondary-color;
+                        }
+
+                        &:focus {
+                            outline: 2px solid $third-color;
+                        }
+                    }
+                }
             }
         }
     }

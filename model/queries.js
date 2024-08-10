@@ -1,5 +1,93 @@
 const pool = require('./pool');
+// READING QUERIESS!!!!!!!!!!!!!!!!!!!!!
 
+const getShows = async () =>{
+    try{
+        return {rows} = await pool.query('SELECT * from show');
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
+const getShowName = async (name) =>{
+    try{
+        const {rows} = await pool.query('SELECT show_name from show where show_name = $1', [name]);
+        return showName = rows[0].show_name ;
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
+const getShowType = async (type_id) =>{
+    try{
+        const {rows} = await pool.query('SELECT type_name from showtype where type_id = $1', [type_id]);
+        return typeName = rows[0].type_name;
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
+const getShowCategory = async (category_id) =>{
+    try{
+        const {rows} = await pool.query('SELECT category_name from showcategory where category_id = $1', [category_id]);
+        return categoryName = rows[0].category_name;
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
+const getShowCountry = async (country_id) =>{
+    try{
+        const {rows} = await pool.query('SELECT country_name from showcountry where country_id = $1', [country_id]);
+        return countryName = rows[0].country_name ;
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
+const getAllCountry = async () =>{
+    try{
+        return {rows} = await pool.query('SELECT country_name from showcountry');
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
+const getAllType = async () =>{
+    try{
+        return {rows} = await pool.query('SELECT type_name from showtype');
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
+const getAllCategory = async () =>{
+    try{
+        return {rows} = await pool.query('SELECT category_name from showcategory');
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+const getMethods = {
+    getShows,
+    getShowCategory,
+    getShowCountry,
+    getShowType,
+    getShowName,
+    getAllCategory,
+    getAllCountry,
+    getAllType
+}
+
+//READING ENDS HEREEE!!!!!!!!!!!!!!!!!!
 // FOR ADDING QUIERES || INSERTING INTO DATABASE
 // STARTS HERE!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -43,9 +131,18 @@ const addShow = async (showType, showCategory,showCountry, showTitle, showRating
         console.log(e);
     }
 }
-
+const addMethods = {
+    addType,
+    addCategory,
+    addShow,
+}
 //ENDSS HEREEEE !!!!!!!!!!!!!!!!!!!!!!!!!
 
+//UPDATE METHODSSS STARTTSS HERE!!!!!!!!!!!!!
+// const updateShow = async(id, )
 
 
-module.exports = {addType, addCategory,addShow}
+
+const updateMethods = {}
+
+module.exports = {addMethods,getMethods,updateMethods}

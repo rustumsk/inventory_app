@@ -409,6 +409,7 @@ body {
 body {
   padding: 0;
   margin: 0;
+  font-family: "Bebas Neue";
 }
 
 .update .head-container {
@@ -511,6 +512,84 @@ body {
   background-color: #F5F5F1;
 }
 .update .update-container button:focus {
+  outline: 2px solid #BB1D24;
+}
+.update .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.update .modal-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+.update .modal-wrapper .modal {
+  width: 80%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.update .modal-wrapper .modal .modal-form {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+}
+.update .modal-wrapper .modal .modal-form label {
+  font-weight: bold;
+}
+.update .modal-wrapper .modal .modal-form input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  width: 100%;
+}
+.update .modal-wrapper .modal .modal-form .button-container {
+  display: flex;
+  gap: 1rem;
+}
+.update .modal-wrapper .modal .modal-form .button-container input[type=submit] {
+  background-color: #221F1F;
+  color: #E50914;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  outline: none;
+}
+.update .modal-wrapper .modal .modal-form .button-container input[type=submit]:hover {
+  background-color: #F5F5F1;
+}
+.update .modal-wrapper .modal .modal-form .button-container input[type=submit]:focus {
+  outline: 2px solid #BB1D24;
+}
+.update .modal-wrapper .modal .modal-form .button-container button {
+  background-color: #221F1F;
+  color: #E50914;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  outline: none;
+}
+.update .modal-wrapper .modal .modal-form .button-container button:hover {
+  background-color: #F5F5F1;
+}
+.update .modal-wrapper .modal .modal-form .button-container button:focus {
   outline: 2px solid #BB1D24;
 }
 .update .f-container {
