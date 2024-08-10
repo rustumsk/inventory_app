@@ -29,6 +29,7 @@
                         <dialog class="modal" open>
                             <form action="/update/show" class="modal-form" method="POST">
                                 <input type="hidden" name="s-id" id="s-id" value="<%= sArr.id %>">
+
                                 <label for="s-name">Show Title:</label>
                                 <input type="text" name="s-name" id="s-name" value="<%= sArr.name %>">
 
@@ -45,7 +46,6 @@
                                         <option value="<%= c.category_name %>"><%= c.category_name %></option>
                                     <% }) %>
                                 </select>
-                                <!-- <input type="text" name="s-cat" id="s-cat" value="<%= sArr.category %>"> -->
 
                                 <label for="s-country">Country:</label>
                                 <select name="s-country" id="s-country">
@@ -53,7 +53,59 @@
                                         <option value="<%= co.country_name %>"><%= co.country_name %></option>
                                     <% }) %>
                                 </select>
-                                <!-- <input type="text" name="s-country" id="s-country" value="<%= sArr.country %>"> -->
+
+                                <label for="s-rating">Rating:</label>
+                                <input type="text" name="s-rating" id="s-rating" value="<%= sArr.rating %>">
+
+                                <div class="button-container">
+                                    <input type="submit" value="Submit">
+                                    <button type="button" onclick="clickBack()">BACK</button>
+                                </div>
+                            </form>
+                        </dialog>
+                    </div>
+                <% } %>
+                <div class="list-container">
+                    <% array.forEach(arr => { %>
+                        <div class="list" onclick="clickShow('<%= arr.show_id %>','<%= arr.show_type_id %>', '<%= arr.showcategory_id %>', '<%= arr.showcountry_id%>'
+                            ,'<%= arr.show_name %>', '<%= arr.show_rating %>'
+                        )">
+                            <%- arr.show_name %>
+                        </div>
+                    <% }) %> 
+                </div>
+                <button onclick="window.history.back()">BACK</button>                
+            <% } else if (option === 'category') { %>
+                <% if(show === 'yes') { %>
+                    <div class="overlay"></div>
+                    <div class="modal-wrapper">
+                        <dialog class="modal" open>
+                            <form action="/update/show" class="modal-form" method="POST">
+                                <input type="hidden" name="s-id" id="s-id" value="<%= sArr.id %>">
+
+                                <label for="s-name">Show Title:</label>
+                                <input type="text" name="s-name" id="s-name" value="<%= sArr.name %>">
+
+                                <label for="s-type">Show Type:</label>
+                                <select name="s-type" id="s-type">
+                                    <% sArr.type.forEach(t =>{ %>
+                                        <option value="<%= t.type_name %>"><%= t.type_name %></option>
+                                    <% }) %>
+                                </select>
+                                
+                                <label for="s-cat">Category:</label>
+                                <select name="s-cat" id="s-cat">
+                                    <% sArr.category.forEach(c =>{ %>
+                                        <option value="<%= c.category_name %>"><%= c.category_name %></option>
+                                    <% }) %>
+                                </select>
+
+                                <label for="s-country">Country:</label>
+                                <select name="s-country" id="s-country">
+                                    <% sArr.country.forEach(co =>{ %>
+                                        <option value="<%= co.country_name %>"><%= co.country_name %></option>
+                                    <% }) %>
+                                </select>
 
                                 <label for="s-rating">Rating:</label>
                                 <input type="text" name="s-rating" id="s-rating" value="<%= sArr.rating %>">
@@ -76,8 +128,6 @@
                     <% }) %> 
                 </div>
                 <button onclick="window.history.back()">BACK</button>
-            <% } else if (option === 'showYes') { %>
-            <% } else if (option === 'category') { %>
             <% } else if (option === 'type') { %>
             <% } %>
         </section>

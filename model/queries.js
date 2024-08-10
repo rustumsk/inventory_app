@@ -1,6 +1,6 @@
 const pool = require('./pool');
-// READING QUERIESS!!!!!!!!!!!!!!!!!!!!!
 
+// READING QUERIESS!!!!!!!!!!!!!!!!!!!!!
 const getShows = async () =>{
     try{
         return {rows} = await pool.query('SELECT * from show');
@@ -29,7 +29,33 @@ const getShowType = async (type_id) =>{
         console.log(e);
     }
 }
-
+const getTypeId = async (typeName) =>{
+    try{
+        const {rows} = await pool.query('SELECT type_id from showtype where type_name = $1', [typeName]);
+        return rows[0].type_id;
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+const getCategoryId = async (categoryName) =>{
+    try{
+        const {rows} = await pool.query('SELECT category_id from showcategory where category_name = $1', [categoryName]);
+        return rows[0].category_id;
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+const getCountryId = async (countryName) =>{
+    try{
+        const {rows} = await pool.query('SELECT country_id from showcountry where country_name = $1', [countryName]);
+        return rows[0].country_id;
+    }
+    catch(e){
+        console.log(e);
+    }
+}
 const getShowCategory = async (category_id) =>{
     try{
         const {rows} = await pool.query('SELECT category_name from showcategory where category_id = $1', [category_id]);
@@ -86,8 +112,8 @@ const getMethods = {
     getAllCountry,
     getAllType
 }
-
 //READING ENDS HEREEE!!!!!!!!!!!!!!!!!!
+
 // FOR ADDING QUIERES || INSERTING INTO DATABASE
 // STARTS HERE!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -139,10 +165,23 @@ const addMethods = {
 //ENDSS HEREEEE !!!!!!!!!!!!!!!!!!!!!!!!!
 
 //UPDATE METHODSSS STARTTSS HERE!!!!!!!!!!!!!
-// const updateShow = async(id, )
+const updateShow = async (showId,showName,showType, showCategory, showCountry, showRating) =>{
+    try{
+        const type = await getTypeId(showType);
+        const category = await getCategoryId(showCategory);
+        const country = await getCountryId(showCountry);
+        
+        await pool.query('UPDATE show set show_name = $1, show_type_id = $2, showcategory_id = $3, showcountry_id = $4,show_rating = $5 where show_id = $6',
+            [showName,type,category,country,showRating,showId]);
+    }
+    catch(e){
+        console.log(e);
+    }
+    
+}
 
 
 
-const updateMethods = {}
+const updateMethods = {updateShow}
 
 module.exports = {addMethods,getMethods,updateMethods}

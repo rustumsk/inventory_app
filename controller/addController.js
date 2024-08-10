@@ -1,6 +1,7 @@
 const {addMethods} = require('../model/queries');
 
 const aType = (req,res) =>{
+    console.log(req.body);
     addMethods.addType(req.body.type);
     res.redirect('/info');
 }

@@ -21,6 +21,10 @@ const getUpdate = async (req,res) =>{
 
     const co = await getMethods.getAllCountry();
     const country = co.rows;
+
+    const ty = await getMethods.getShowType(req.query.type);
+    const ca = await getMethods.getShowCategory(req.query.category);
+    const con = await getMethods.getShowCountry(req.query.country);
     
     const id = req.query.id
     const rating = req.query.rating;
@@ -31,9 +35,12 @@ const getUpdate = async (req,res) =>{
         category,
         country,
         rating,
-        name
+        name,
+        ty,
+        ca,
+        con
     }
-    res.render('update', {option, show,array, sArr});
+    res.render('update', {option, show, array, sArr});
 }
 
 module.exports = {getAdd, getUpdate};
