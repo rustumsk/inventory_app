@@ -1,0 +1,17 @@
+@import './variables.scss';
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.delete{
+    .head-container{
+        @include header-style;
+    }
+    .delete-container{
+        height: 100vh;
+    }
+    .f-container{
+        @include footer-style;
+    }
+}
