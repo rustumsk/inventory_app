@@ -16,6 +16,12 @@
             window.location.href = `http://localhost:3000/update?choice=show&show=yes&id=${id}&type=${type}&category=${category}&country=${country}
             &name=${name}&rating=${rating}`;
         }
+        const clickCategory =(categoryId, categoryName) =>{
+            window.location.href = `http://localhost:3000/update?choice=category&show=yes&cId=${categoryId}&cCategory=${categoryName}`;
+        }
+        const clickType = (typeId, typeName) =>{
+            window.location.href = `http://localhost:3000/update?choice=type&show=yes&tId=${typeId}&typeName=${typeName}`;
+        }
     </script>
 </head>
 <body>
@@ -35,22 +41,31 @@
 
                                 <label for="s-type">Show Type:</label>
                                 <select name="s-type" id="s-type">
-                                    <% sArr.type.forEach(t =>{ %>
-                                        <option value="<%= t.type_name %>"><%= t.type_name %></option>
+                                    <option value="<%= sArr.ty %>" selected ><%= sArr.ty %></option>
+                                    <% sArr.type.forEach(t => { %>
+                                        <% if (t.type_name !== sArr.ty) { %>
+                                            <option value="<%= t.type_name %>"><%= t.type_name %></option>
+                                        <% } %>
                                     <% }) %>
                                 </select>
                                 
                                 <label for="s-cat">Category:</label>
                                 <select name="s-cat" id="s-cat">
-                                    <% sArr.category.forEach(c =>{ %>
-                                        <option value="<%= c.category_name %>"><%= c.category_name %></option>
+                                    <option value="<%= sArr.ca %>" selected ><%= sArr.ca %></option>
+                                    <% sArr.category.forEach(c => { %>
+                                        <% if (c.category_name !== sArr.ca) { %>
+                                            <option value="<%= c.category_name %>"><%= c.category_name %></option>
+                                        <% } %>
                                     <% }) %>
                                 </select>
 
                                 <label for="s-country">Country:</label>
                                 <select name="s-country" id="s-country">
-                                    <% sArr.country.forEach(co =>{ %>
-                                        <option value="<%= co.country_name %>"><%= co.country_name %></option>
+                                    <option value="<%= sArr.con %>" selected ><%= sArr.con %></option>
+                                    <% sArr.country.forEach(co => { %>
+                                        <% if (co.country_name !== sArr.con) { %>
+                                            <option value="<%= co.country_name %>"><%= co.country_name %></option>
+                                        <% } %>
                                     <% }) %>
                                 </select>
 
@@ -66,6 +81,7 @@
                     </div>
                 <% } %>
                 <div class="list-container">
+                    <h2>Shows</h2>
                     <% array.forEach(arr => { %>
                         <div class="list" onclick="clickShow('<%= arr.show_id %>','<%= arr.show_type_id %>', '<%= arr.showcategory_id %>', '<%= arr.showcountry_id%>'
                             ,'<%= arr.show_name %>', '<%= arr.show_rating %>'
@@ -80,36 +96,10 @@
                     <div class="overlay"></div>
                     <div class="modal-wrapper">
                         <dialog class="modal" open>
-                            <form action="/update/show" class="modal-form" method="POST">
-                                <input type="hidden" name="s-id" id="s-id" value="<%= sArr.id %>">
-
-                                <label for="s-name">Show Title:</label>
-                                <input type="text" name="s-name" id="s-name" value="<%= sArr.name %>">
-
-                                <label for="s-type">Show Type:</label>
-                                <select name="s-type" id="s-type">
-                                    <% sArr.type.forEach(t =>{ %>
-                                        <option value="<%= t.type_name %>"><%= t.type_name %></option>
-                                    <% }) %>
-                                </select>
-                                
-                                <label for="s-cat">Category:</label>
-                                <select name="s-cat" id="s-cat">
-                                    <% sArr.category.forEach(c =>{ %>
-                                        <option value="<%= c.category_name %>"><%= c.category_name %></option>
-                                    <% }) %>
-                                </select>
-
-                                <label for="s-country">Country:</label>
-                                <select name="s-country" id="s-country">
-                                    <% sArr.country.forEach(co =>{ %>
-                                        <option value="<%= co.country_name %>"><%= co.country_name %></option>
-                                    <% }) %>
-                                </select>
-
-                                <label for="s-rating">Rating:</label>
-                                <input type="text" name="s-rating" id="s-rating" value="<%= sArr.rating %>">
-
+                            <form action="/update/category" class="modal-form" method="POST">
+                                <input type="hidden" name="c-id" id="c-id" value="<%= catArr.catId %>">
+                                <label for="catName">Category: </label>
+                                <input type="text" name="catName" id="catName" value="<%= catArr.cName %>">
                                 <div class="button-container">
                                     <input type="submit" value="Submit">
                                     <button type="button" onclick="clickBack()">BACK</button>
@@ -118,17 +108,37 @@
                         </dialog>
                     </div>
                 <% } %>
-                <div class="list-container">
-                    <% array.forEach(arr => { %>
-                        <div class="list" onclick="clickShow('<%= arr.show_id %>','<%= arr.show_type_id %>', '<%= arr.showcategory_id %>', '<%= arr.showcountry_id%>'
-                            ,'<%= arr.show_name %>', '<%= arr.show_rating %>'
-                        )">
-                            <%- arr.show_name %>
-                        </div>
+                <div class="category-container">
+                    <h2>Categories</h2>
+                    <% catArr.cArr.forEach(car => { %>
+                        <div class="category-item" onclick="clickCategory('<%= car.category_id %>', '<%= car.category_name %>')"> <%= car.category_name %> </div>
                     <% }) %> 
                 </div>
                 <button onclick="window.history.back()">BACK</button>
             <% } else if (option === 'type') { %>
+                <% if(show === 'yes') { %>
+                    <div class="overlay"></div>
+                    <div class="modal-wrapper">
+                        <dialog class="modal" open>
+                            <form action="/update/type" class="modal-form" method="POST">
+                                <input type="hidden" name="t-id" value="<%= typeObject.typeId %>">
+                                <label for="typeName">Type: </label>
+                                <input type="text" name="typeName" id="typeName" value="<%= typeObject.typeName %>">
+                                <div class="button-container">
+                                    <input type="submit" value="Submit">
+                                    <button type="button" onclick="clickBack()">BACK</button>
+                                </div>
+                            </form>
+                        </dialog>
+                    </div>
+                <% } %>
+                <div class="type-container">
+                    <h2>Types</h2>
+                    <% cType.forEach(type => { %>
+                        <div class="type-item" onclick="clickType('<%= type.type_id %>', '<%= type.type_name %>')"> <%= type.type_name %> </div>
+                    <% }) %> 
+                </div>
+                <button onclick="window.history.back()">BACK</button>
             <% } %>
         </section>
         <%- include('footer') %>

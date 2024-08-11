@@ -465,15 +465,26 @@ body {
   place-content: center;
   padding: 2rem;
 }
-.update .update-container .list-container {
-  height: 35rem;
-  width: 25rem;
-  background-color: #F5F5F1;
+.update .update-container .list-container, .update .update-container .category-container, .update .update-container .type-container {
+  height: 30rem;
+  width: 30rem;
   padding: 2rem;
-  padding-bottom: 0;
+  border-radius: 1rem;
   overflow: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  text-align: center;
+}
+.update .update-container .list-container h2, .update .update-container .category-container h2, .update .update-container .type-container h2 {
+  font-family: "Bebas Neue";
+  margin-bottom: 1rem;
+  color: #E50914;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.update .update-container .list-container {
+  background-color: #F5F5F1;
 }
 .update .update-container .list-container .list {
   background-color: #221F1F;
@@ -494,6 +505,45 @@ body {
   background-color: #BB1D24;
   color: #F5F5F1;
   transform: scale(1.02);
+}
+.update .update-container .category-container {
+  background-color: #F5F5F1;
+}
+.update .update-container .category-container .category-item {
+  background-color: #221F1F;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-family: "Bebas Neue";
+  font-size: 1.1rem;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.update .update-container .category-container .category-item:hover {
+  background-color: #221F1F;
+  color: #E50914;
+  transform: scale(1.05);
+}
+.update .update-container .type-container {
+  background-color: #221F1F;
+}
+.update .update-container .type-container .type-item {
+  background-color: #F5F5F1;
+  border: 2px solid #F5F5F1;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #221F1F;
+  font-family: "Bebas Neue";
+  font-size: 1.2rem;
+  transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+.update .update-container .type-container .type-item:hover {
+  background-color: #221F1F;
+  color: white;
+  border-color: #221F1F;
+  transform: scale(1.05);
 }
 .update .update-container button {
   margin-top: 1rem;
@@ -556,11 +606,7 @@ body {
   border-radius: 0.25rem;
   width: 100%;
 }
-.update .modal-wrapper .modal .modal-form .button-container {
-  display: flex;
-  gap: 1rem;
-}
-.update .modal-wrapper .modal .modal-form .button-container input[type=submit] {
+.update .modal-wrapper .modal .modal-form button {
   background-color: #221F1F;
   color: #E50914;
   padding: 0.5rem 1rem;
@@ -570,26 +616,10 @@ body {
   transition: background-color 0.3s;
   outline: none;
 }
-.update .modal-wrapper .modal .modal-form .button-container input[type=submit]:hover {
+.update .modal-wrapper .modal .modal-form button:hover {
   background-color: #F5F5F1;
 }
-.update .modal-wrapper .modal .modal-form .button-container input[type=submit]:focus {
-  outline: 2px solid #BB1D24;
-}
-.update .modal-wrapper .modal .modal-form .button-container button {
-  background-color: #221F1F;
-  color: #E50914;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  outline: none;
-}
-.update .modal-wrapper .modal .modal-form .button-container button:hover {
-  background-color: #F5F5F1;
-}
-.update .modal-wrapper .modal .modal-form .button-container button:focus {
+.update .modal-wrapper .modal .modal-form button:focus {
   outline: 2px solid #BB1D24;
 }
 .update .f-container {

@@ -19,16 +19,29 @@ body {
         place-content: center;
         padding: 2rem;
 
-        .list-container {
-            height: 35rem;
-            width: 25rem;
-            background-color: $secondary-color;
+        .list-container, .category-container, .type-container {
+            height: 30rem; // Adjust height based on content
+            width: 30rem;
             padding: 2rem;
-            padding-bottom: 0;
+            border-radius: 1rem; // Rounded corners for a softer loo
             overflow: auto;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Soft shadow for depth
+            margin: 0 auto; // Center container horizontally
+            text-align: center; // Center text alignment
 
+            h2 {
+                font-family: $font;
+                margin-bottom: 1rem;
+                color: $fourth-color;
+                font-size: 1.5rem;
+                text-transform: uppercase; // Uppercase for emphasis
+                letter-spacing: 0.1rem; // Letter spacing for readability
+            }
+        }
+
+        .list-container {
+            background-color: $secondary-color;
+            
             .list {
                 background-color: $primary-color;
                 margin-top: 0.5rem;
@@ -48,6 +61,51 @@ body {
                     background-color: $third-color;
                     color: $secondary-color;
                     transform: scale(1.02);
+                }
+            }
+        }
+
+        .category-container {
+            background-color: $secondary-color;
+
+            .category-item {
+                background-color: $primary-color;
+                margin: 0.5rem 0;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                font-family: $font;
+                font-size: 1.1rem;
+                transition: background-color 0.3s, transform 0.3s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $primary-color;
+                    color: $fourth-color;
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .type-container {
+            background-color: $primary-color;
+
+            .type-item {
+                background-color: $secondary-color;
+                border: 2px solid $secondary-color;
+                margin: 0.5rem 0;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                color: $primary-color;
+                font-family: $font;
+                font-size: 1.2rem;
+                transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $primary-color;
+                    color: white;
+                    border-color: $primary-color;
+                    transform: scale(1.05);
                 }
             }
         }
@@ -124,49 +182,22 @@ body {
                     width: 100%;
                 }
 
-                // Container for buttons
-                .button-container {
-                    display: flex;
-                    gap: 1rem; // Space between buttons
+                button {
+                    background-color: $primary-color;
+                    color: $fourth-color;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 0.25rem;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                    outline: none;
 
-                    // Style for submit button
-                    input[type="submit"] {
-                        background-color: $primary-color;
-                        color: $fourth-color;
-                        padding: 0.5rem 1rem;
-                        border: none;
-                        border-radius: 0.25rem;
-                        cursor: pointer;
-                        transition: background-color 0.3s;
-                        outline: none;
-
-                        &:hover {
-                            background-color: $secondary-color;
-                        }
-
-                        &:focus {
-                            outline: 2px solid $third-color;
-                        }
+                    &:hover {
+                        background-color: $secondary-color;
                     }
 
-                    // Style for back button
-                    button {
-                        background-color: $primary-color;
-                        color: $fourth-color;
-                        padding: 0.5rem 1rem;
-                        border: none;
-                        border-radius: 0.25rem;
-                        cursor: pointer;
-                        transition: background-color 0.3s;
-                        outline: none;
-
-                        &:hover {
-                            background-color: $secondary-color;
-                        }
-
-                        &:focus {
-                            outline: 2px solid $third-color;
-                        }
+                    &:focus {
+                        outline: 2px solid $third-color;
                     }
                 }
             }

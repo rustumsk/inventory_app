@@ -10,6 +10,24 @@ const getShows = async () =>{
     }
 }
 
+const getCategories = async () =>{
+    try{
+        return {rows} = await pool.query('SELECT * from showcategory');
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
+const getTypes = async () =>{
+    try{
+        return {rows} = await pool.query('SELECT * from showtype');
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
 const getShowName = async (name) =>{
     try{
         const {rows} = await pool.query('SELECT show_name from show where show_name = $1', [name]);
@@ -29,6 +47,7 @@ const getShowType = async (type_id) =>{
         console.log(e);
     }
 }
+
 const getTypeId = async (typeName) =>{
     try{
         const {rows} = await pool.query('SELECT type_id from showtype where type_name = $1', [typeName]);
@@ -38,6 +57,7 @@ const getTypeId = async (typeName) =>{
         console.log(e);
     }
 }
+
 const getCategoryId = async (categoryName) =>{
     try{
         const {rows} = await pool.query('SELECT category_id from showcategory where category_name = $1', [categoryName]);
@@ -47,6 +67,7 @@ const getCategoryId = async (categoryName) =>{
         console.log(e);
     }
 }
+
 const getCountryId = async (countryName) =>{
     try{
         const {rows} = await pool.query('SELECT country_id from showcountry where country_name = $1', [countryName]);
@@ -56,6 +77,7 @@ const getCountryId = async (countryName) =>{
         console.log(e);
     }
 }
+
 const getShowCategory = async (category_id) =>{
     try{
         const {rows} = await pool.query('SELECT category_name from showcategory where category_id = $1', [category_id]);
@@ -110,7 +132,9 @@ const getMethods = {
     getShowName,
     getAllCategory,
     getAllCountry,
-    getAllType
+    getAllType,
+    getCategories,
+    getTypes,
 }
 //READING ENDS HEREEE!!!!!!!!!!!!!!!!!!
 
@@ -177,11 +201,27 @@ const updateShow = async (showId,showName,showType, showCategory, showCountry, s
     catch(e){
         console.log(e);
     }
-    
+}
+const updateCategory = async (categoryId, categoryName) =>{
+    try{
+        await pool.query('UPDATE showcategory set category_name = $1 where category_id = $2', [categoryName,categoryId]);
+        console.log('Updated!');
+    }
+    catch(e){
+        console.log(e);
+    }
 }
 
+const updateType = async (typeId, typeName) =>{
+    try{
+        await pool.query('UPDATE showtype set type_name = $1 where type_id = $2', [typeName,typeId]);
+        console.log('Updated!');
+    }
+    catch(e){
+        console.log(e);
+    }
+}
 
-
-const updateMethods = {updateShow}
+const updateMethods = {updateShow, updateCategory, updateType};
 
 module.exports = {addMethods,getMethods,updateMethods}

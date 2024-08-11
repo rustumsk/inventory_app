@@ -13,6 +13,12 @@ const getUpdate = async (req,res) =>{
     const arr = await getMethods.getShows();
     const array = arr.rows;
 
+    const c1 = await getMethods.getCategories();
+    const cArr = c1.rows;
+
+    const c2 = await getMethods.getTypes();
+    const cType = c2.rows;
+
     const t = await getMethods.getAllType();
     const type = t.rows;
 
@@ -40,7 +46,22 @@ const getUpdate = async (req,res) =>{
         ca,
         con
     }
-    res.render('update', {option, show, array, sArr});
+    const catId = req.query.cId;
+    const cName = req.query.cCategory;
+    const catArr = {
+        cArr,
+        cName,
+        catId,
+    }
+
+    const typeId = req.query.tId;
+    const typeName = req.query.typeName;
+
+    const typeObject = {
+        typeId,
+        typeName
+    }
+    res.render('update', {option, show, array, sArr, cType, catArr, typeObject});
 }
 
 module.exports = {getAdd, getUpdate};
