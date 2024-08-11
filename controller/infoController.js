@@ -64,4 +64,28 @@ const getUpdate = async (req,res) =>{
     res.render('update', {option, show, array, sArr, cType, catArr, typeObject});
 }
 
-module.exports = {getAdd, getUpdate};
+const getDelete = async (req,res) =>{
+    const option = req.query.choice;
+    const show = req.query.show;
+    const sa = await getMethods.getShows();
+    const showArr = sa.rows;
+
+    let sInfo = {};
+    let showId;
+    let showName;
+
+    if (option === 'show' && req.query.show === 'yes'){
+        showId = req.query.sId;
+        showName = req.query.showName;
+        sInfo = {
+            showId,
+            showName,
+        }
+        console.log("Nigga");
+    }
+    console.log(show);
+    console.log(showArr.rows);
+    res.render('delete', {option, showArr,show,sInfo});
+}
+
+module.exports = {getAdd, getUpdate, getDelete};

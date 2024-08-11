@@ -21,6 +21,9 @@
     const updateRedirect = (category) => {
         window.location.href = `http://localhost:3000/update?choice=${category}`;
     }
+    const deleteRedirect = (category) =>{
+        window.location.href = `http://localhost:3000/delete?choice=${category}`;
+    }
 </script>
 <link rel="stylesheet" href="./main.css">
 <section class="sect">
@@ -45,9 +48,9 @@
         <div class="button-group">
             <button class="action-btn" onclick="deleteClick()">DELETE</button>
             <% if (locals.dOption) { %>
-                <button class="action-btn show">DELETE SHOW</button>
-                <button class="action-btn category">DELETE CATEGORY</button>
-                <button class="action-btn type">DELETE TYPE</button>
+                <button class="action-btn show" onclick="deleteRedirect('show')">DELETE SHOW</button>
+                <button class="action-btn category" onclick="deleteRedirect('category')">DELETE CATEGORY</button>
+                <button class="action-btn type" onclick="deleteRedirect('type')">DELETE TYPE</button>
             <% } %>
         </div>
     </section>

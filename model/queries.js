@@ -9,7 +9,14 @@ const getShows = async () =>{
         console.log(e);
     }
 }
-
+const getDeleteShow = async () =>{
+    try{
+        return {rows} = await pool.query('SELECT show_id, show_name from show');
+    }
+    catch(e){
+        console.log(e);
+    }
+}
 const getCategories = async () =>{
     try{
         return {rows} = await pool.query('SELECT * from showcategory');
@@ -135,6 +142,7 @@ const getMethods = {
     getAllType,
     getCategories,
     getTypes,
+    getDeleteShow,
 }
 //READING ENDS HEREEE!!!!!!!!!!!!!!!!!!
 
@@ -223,5 +231,38 @@ const updateType = async (typeId, typeName) =>{
 }
 
 const updateMethods = {updateShow, updateCategory, updateType};
+//END OF UPDATE METHODSS!!!!!
 
-module.exports = {addMethods,getMethods,updateMethods}
+//START OF DELETE METHODSS!!!!!!!
+
+const deleteShow = async (showId, showName) => {
+    try{
+        await pool.query('delete from show where show_id = $1', [showId]);
+        console.log(`${showName} is deleted!`);
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
+const deleteCategory = async (categoryId, categoryName) =>{
+    try{
+        await pool.query('delete from showcategory where category_id = $1 and category_name = $2', [categoryId,categoryName]);
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
+const deleteType = async (typeId, typeName) =>{
+    try{
+        await pool.query('delete from showtype where type_id = $1 and type_name = $2', [typeId,typeName]);
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
+const deleteMethods = {deleteShow,deleteCategory,deleteType};
+
+module.exports = {addMethods,getMethods,updateMethods,deleteMethods};

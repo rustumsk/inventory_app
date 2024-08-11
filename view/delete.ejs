@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/main.css">
+    <script>
+        const clickBack = () => {
+            window.location.href = `http://localhost:3000/delete?choice=show`;
+        }
+        const showClick = (showId, showName, event) =>{
+            const inValue = document.querySelector('#sName').value;
+            event.preventDefault();
+            if (!(inValue.toLowerCase() == showName.toLowerCase())){
+                alert('Invalid input! it did not match!');
+            }
+            else{
+                const form = event.target.closest('form');
+                form.submit();
+            }
+        }
+        const showC = (showId, showName) =>{
+            window.location.href = `http://localhost:3000/delete?choice=show&show=yes&sId=${showId}&showName=${showName}`;
+        }
+    </script>
+</head>
+<body>
+    <section class="delete">
+        <%- include('header') %>
+        <section class="delete-container">
+            <% if (option === 'show') { %>
+                <% if (show === 'yes') {%>
+                    <dialog open class="dialog">
+                        <p>Enter "<%= sInfo.showName %>" To Confrim Deletion </p>
+                        <form action="/delete/show" method="POST">
+                            <input type="hidden" name="sId" value="<%= sInfo.showId %>">
+                            <input type="text" name="sName" id="sName">
+                            <input type="button" onclick="clickBack()" value="Back">
+                            <input type="submit" onclick="showClick('<%= sInfo.showId %>', '<%= sInfo.showName %>', event)">
+                        </form>
+                    </dialog>
+                <% } %>
+                <div class="dShow-container">
+                    <h2>Delete Shows</h2>
+                    <div class="shows">
+                        <% showArr.forEach(sa =>{ %>
+                            <div class="show"> <%= sa.show_name %> <span class="icon" onclick="showC('<%= sa.show_id %>', '<%= sa.show_name %>')">DELETE ICON</span></div>
+                        <% }) %>
+                    </div>
+                </div>
+            <% } else if (option === 'category') { %>
+            
+            <% } else if (option === 'type') { %>
+
+            <% } %>
+        </section>
+        <%- include('footer') %>
+    </section>
+</body>
+</html>
