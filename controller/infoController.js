@@ -73,20 +73,54 @@ const getDelete = async (req,res) =>{
     const ca = await getMethods.getCategories();
     const catArr = ca.rows;
 
+    const t = await getMethods.getTypes();
+    const typeArr = t.rows;
+
     let sInfo = {};
     let showId;
     let showName;
 
-    if (option === 'show' && req.query.show === 'yes'){
-        showId = req.query.sId;
-        showName = req.query.showName;
-        sInfo = {
-            showId,
-            showName,
+    let cInfo = {};
+    let cId;
+    let catName;
+
+    let tInfo = {};
+    let tId;
+    let typeName;
+
+    if (req.query.show === 'yes'){
+        if (option === 'show'){
+            showId = req.query.sId;
+            showName = req.query.showName;
+            sInfo = {
+                showId,
+                showName,
+            }
+            console.log("Nigga");
         }
-        console.log("Nigga");
+
+        else if (option === 'category'){
+            cId = req.query.cId;
+            catName = req.query.catName;
+            cInfo = {
+                cId,
+                catName,
+            }
+        }
+
+        else if (option === 'type'){
+            tId = req.query.tId;
+            typeName = req.query.typeName;
+
+            tInfo = {
+                tId,
+                typeName,
+            }
+
+        }
     }
-    res.render('delete', {option, showArr,show,sInfo, catArr});
+
+    res.render('delete', {option, showArr,show,sInfo, catArr, cInfo, typeArr, tInfo});
 }
 
 module.exports = {getAdd, getUpdate, getDelete};

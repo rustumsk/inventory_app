@@ -245,24 +245,35 @@ const deleteShow = async (showId, showName) => {
     }
 }
 
-const deleteCategory = async (categoryId, categoryName) =>{
+const deleteCategory = async (categoryId) =>{
     try{
-        await pool.query('delete from showcategory where category_id = $1 and category_name = $2', [categoryId,categoryName]);
+        await pool.query('delete from showcategory where category_id = $1', [categoryId]);
+        console.log('deleted!');
     }
     catch(e){
         console.log(e);
     }
 }
 
-const deleteType = async (typeId, typeName) =>{
+const deleteType = async (typeId) =>{
     try{
-        await pool.query('delete from showtype where type_id = $1 and type_name = $2', [typeId,typeName]);
+        await pool.query('delete from showtype where type_id = $1', [typeId]);
     }
     catch(e){
         console.log(e);
     }
 }
 
-const deleteMethods = {deleteShow,deleteCategory,deleteType};
+const deleteCatShow = async (catId) =>{
+    await pool.query('delete from show where showcategory_id = $1', [catId]);
+    console.log('affiliated show deleted!');
+}
+
+const deleteTypeShow = async (typeId) =>{
+    await pool.query('delete from show where show_type_id = $1', [typeId]);
+    console.log('affiliated show deleted!');
+}
+
+const deleteMethods = {deleteShow,deleteCategory,deleteType, deleteCatShow, deleteTypeShow};
 
 module.exports = {addMethods,getMethods,updateMethods,deleteMethods};
