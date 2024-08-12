@@ -70,6 +70,9 @@ const getDelete = async (req,res) =>{
     const sa = await getMethods.getShows();
     const showArr = sa.rows;
 
+    const ca = await getMethods.getCategories();
+    const catArr = ca.rows;
+
     let sInfo = {};
     let showId;
     let showName;
@@ -83,9 +86,7 @@ const getDelete = async (req,res) =>{
         }
         console.log("Nigga");
     }
-    console.log(show);
-    console.log(showArr.rows);
-    res.render('delete', {option, showArr,show,sInfo});
+    res.render('delete', {option, showArr,show,sInfo, catArr});
 }
 
 module.exports = {getAdd, getUpdate, getDelete};
