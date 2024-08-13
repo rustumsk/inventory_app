@@ -11,30 +11,44 @@ body {
     }
 
     .home-container {
-        height: 100vh;
-        color: black;
-        padding: 3rem;
+        min-height: 50rem;
         display: grid;
-        grid-template-columns: repeat(5, 1fr); /* 5 columns */
-        grid-template-rows: repeat(5, 1fr); /* 5 rows */
-        gap: 1rem; /* Space between grid items */
-        align-items: stretch; /* Stretch items to fill their grid areas */
-        justify-items: stretch; /* Stretch items to fill their grid areas */
-        text-align: center; /* Center text in grid items */
-        
-        /* Optional: Add styles for individual grid items */
-        div {
-            background-color: $primary-color; /* Replace with your desired background color */
-            color: black; /* Replace with your text color */
-            padding: 2rem;
-            border-radius: 0.5rem; /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
-            display: flex; /* Flexbox to center content inside grid items */
-            align-items: center;
-            justify-content: center;
+        padding: 3rem;
+        grid-template-columns: repeat(5, 1fr); /* Default: 5 columns */
+        grid-template-rows: repeat(auto-fill, 250px); /* Rows with a height of 250px */
+        gap: 1rem;
+    }
+    
+    /* For smaller screens, adjust the number of columns */
+    @media (max-width: 1200px) {
+        .home-container {
+            grid-template-columns: repeat(4, 1fr); /* 4 columns on medium screens */
         }
     }
-
+    
+    @media (max-width: 900px) {
+        .home-container {
+            grid-template-columns: repeat(3, 1fr); /* 3 columns on smaller screens */
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .home-container {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+        }
+    }
+    
+    @media (max-width: 400px) {
+        .home-container {
+            grid-template-columns: 1fr; /* 1 column on very small screens */
+        }
+    }
+    
+    .home-container div {
+        display: grid;
+        place-content: center;
+        background-color: black;
+    }
     .f-container {
         @include footer-style;
     }

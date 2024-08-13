@@ -189,10 +189,21 @@ const addShow = async (showType, showCategory,showCountry, showTitle, showRating
         console.log(e);
     }
 }
+
+const addImg = async (showId,imgData,imgName) =>{
+    try{
+        await pool.query('insert into images (showId, data, image_name) values ($1,$2,$3)', [showId, imgData,imgName]);
+        console.log('Inserted!');
+    }
+    catch(e){
+        console.log(e);
+    }
+}
 const addMethods = {
     addType,
     addCategory,
     addShow,
+    addImg,
 }
 //ENDSS HEREEEE !!!!!!!!!!!!!!!!!!!!!!!!!
 

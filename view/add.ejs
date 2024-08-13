@@ -3,7 +3,7 @@
     <%- include('header') %>
     <section class="add-container">
         <% if(option === 'show') { %>
-            <form action="/add/show" class="form" method="POST">
+            <form action="/add/show" class="form" method="POST" enctype="multipart/form-data">
                 <label for="s-title">Show Title: </label>
                 <input type="text" name="sTitle" id="s-title">
 
@@ -30,6 +30,9 @@
 
                 <label for="s-rating">Show rating: </label>
                 <input type="text" name="sRating" id="s-rating">
+
+                <label for="pic">Upload Image</label>
+                <input type="file" name="pic" id="pic">
 
                 <div class="form-buttons">
                     <input type="submit" value="CREATE SHOW">
