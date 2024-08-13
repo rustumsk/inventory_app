@@ -6,6 +6,7 @@ const aType = (req,res) =>{
     res.redirect('/info');
 }
 const aShow = (req,res) =>{
+    console.log(req.body.sType, req.body.sCategory, req.body.sCountry, req.body.sTitle, req.body.sRating);
     addMethods.addShow(req.body.sType, req.body.sCategory, req.body.sCountry, req.body.sTitle, req.body.sRating);
     res.redirect('/info');
 }

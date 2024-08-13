@@ -1,8 +1,18 @@
 const { getMethods } = require('../model/queries');
 
-const getAdd = (req,res) =>{
+const getAdd = async (req,res) =>{
+    const t = await getMethods.getTypes();
+    const typeArr = t.rows;
+
+    const c = await getMethods.getCategories();
+    const catArr = c.rows;
+
+    const co = await getMethods.getAllCountry();
+    const conArr = co.rows;
+
     const option = req.query.choice;
-    res.render('add', {option});
+
+    res.render('add', { option, typeArr,catArr,conArr });
 }
 
 const getUpdate = async (req,res) =>{

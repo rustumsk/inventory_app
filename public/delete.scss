@@ -17,17 +17,19 @@ body {
         display: grid;
         place-content: center;
         padding: 2rem;
+        background-color: $secondary-color;
         position: relative; // Ensure proper positioning of the back button
 
         .modal {
             width: 90%; // Adjust width to fit within the viewport
             max-width: 500px; // Set a max-width to ensure it doesn't get too large
-            background-color: $primary-color;
+            background-color: $third-color;
             border-radius: 0.5rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: absolute;
-            top: 50%;
+            top: 10%;
             left: 50%;
+            right: 50%;
             transform: translate(-50%, -50%);
             z-index: 5;
             padding: 1.5rem; // Adjust padding for a more compact design
@@ -124,6 +126,7 @@ body {
             height: 30rem; // Adjust height based on content
             width: 30rem;
             padding: 2rem;
+            background-color: $primary-color;
             border-radius: 1rem; // Rounded corners for a softer look
             overflow: auto;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Soft shadow for depth

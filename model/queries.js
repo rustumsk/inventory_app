@@ -174,8 +174,8 @@ const addShow = async (showType, showCategory,showCountry, showTitle, showRating
         const tResult = await pool.query('SELECT type_id from showtype where type_name = $1', [showType]);
         const typeId = tResult.rows[0].type_id;
 
-        const cResult = await pool.query('Select category_id from showcategory where category_name = $1', [showCategory]);
-        const categoryId = cResult.rows[0].category_id;
+        const cat = await pool.query('SELECT category_id from showcategory where category_name = $1',[showCategory])
+        const categoryId = cat.rows[0].category_id;
 
         const coResult = await pool.query('Select country_id from showcountry where country_name = $1', [showCountry]);
         const countryId = coResult.rows[0].country_id;

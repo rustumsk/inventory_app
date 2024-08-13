@@ -6,7 +6,7 @@ body {
     padding: 0;
     font-family: $font;
     color: $secondary-color;
-    background-color: $third-color;
+    background-color: $secondary-color;
 }
 
 // Container for the entire section
@@ -26,8 +26,7 @@ body {
 
         // Form styling
         .form {
-            background-color: $secondary-color;
-            color: $primary-color;
+            background-color: $primary-color;
             border-radius: 0.5rem;
             padding: 2rem;
             width: 100%;
@@ -38,7 +37,7 @@ body {
                 display: block;
                 margin-bottom: 0.5rem;
                 font-size: 1rem;
-                color: $primary-color;
+                color: white;
             }
 
             input[type="text"], select {

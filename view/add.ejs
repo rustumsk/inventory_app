@@ -9,22 +9,23 @@
 
                 <label for="s-type">Show Type:</label>
                 <select name="sType" id="s-type">
-                    <option value="MOVIE">Movie</option>
-                    <option value="TV_SHOW">Tv Show</option>
+                    <% typeArr.forEach(type => { %>
+                        <option value="<%= type.type_name %>"><%= type.type_name %></option>
+                    <% }) %>
                 </select>
 
                 <label for="s-category">Show Category: </label>
                 <select name="sCategory" id="s-category">
-                    <option value="Action">Action</option>
-                    <option value="Comedy">Comedy</option>
-                    <option value="Romance">Romance</option>
+                    <% catArr.forEach(cat => { %>
+                        <option value="<%= cat.category_name %>"><%= cat.category_name %></option>
+                    <% }) %>
                 </select>
-
+                
                 <label for="s-country">Country: </label>
                 <select name="sCountry" id="s-country">
-                    <option value="USA">United States of America</option>
-                    <option value="China">China</option>
-                    <option value="Japan">Japan</option>
+                    <% conArr.forEach(con => { %>
+                        <option value="<%= con.country_name %>"><%= con.country_name %></option>
+                    <% }) %>
                 </select>
 
                 <label for="s-rating">Show rating: </label>
