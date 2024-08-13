@@ -11,6 +11,10 @@ homeRouter.use('/info', infoRouter);
 homeRouter.use('/add', addRouter);
 homeRouter.use('/update', updateRouter);
 homeRouter.use('/delete', deleteRoute);
+homeRouter.post('/', (req,res) =>{
+    console.log(req.body);
+    res.redirect('/');
+});
 
 
 module.exports = homeRouter;

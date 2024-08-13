@@ -15,6 +15,17 @@
     <section class="home">
         <%- include('header') %>
         <section class="home-container">
+            <% if (choice === 'home'){ %>
+                <div>Hello Home!</div>
+            <% }else if (choice === 'search') { %>
+                <div>Hello search</div>
+            <% } else if (choice === 'movie') { %>
+                <div>hello movie</div>
+            <% } else if (choice ==='tvshow') { %>
+                <div>hello tvshow</div>
+            <% } else { %>
+                <div>HELLO</div>
+            <% } %>
             <div>Hello</div>
         </section>
         <%- include('footer') %>
