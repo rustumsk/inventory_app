@@ -11,22 +11,27 @@ $font: 'Bebas Neue';
     display: flex;
     align-items: center;
     background-color: $primary-color;
+
     & .title {
         flex: 3;
         @extend %section-style;
         font-size: 2rem;
     }
+
     & .home, & .t-show, & .movies, & .info {
         flex: 1;
         @extend %section-style;
         font-size: 1.5rem;
+        transition: background-color 0.3s, color 0.3s;
     }
+
     & .search {
         flex: 2.5;
         display: flex;
         align-items: center;
         gap: 0.5rem;
     }
+
     & .search-input {
         padding: 0.5rem;
         border: 1px solid $fourth-color;
@@ -56,6 +61,7 @@ $font: 'Bebas Neue';
         }
     }
 }
+
 %section-style {
     display: grid;
     place-content: center;
@@ -63,12 +69,28 @@ $font: 'Bebas Neue';
     font-family: $font;
 }
 
+.header-section {
+    position: relative;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.header-section.active {
+    background-color: $third-color;
+    color: $secondary-color;
+    border-radius: 0.25rem;
+}
+
+.header-section.active span {
+    font-weight: bold;
+}
+
 @mixin footer-style {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color:$primary-color;
+    background-color: $primary-color;
     color: $secondary-color;
     font-family: $font;
     text-align: center;
@@ -82,6 +104,7 @@ $font: 'Bebas Neue';
         text-decoration: underline;
     }
 }
+
 .f-content {
     display: grid;
     place-content: center;

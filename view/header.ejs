@@ -1,40 +1,72 @@
-<link rel="stylesheet" href="./header.css">
-<header class="head-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./header.css">
     <script>
+        // Function to handle page redirection and active class management
+        const setActive = (activeClass) => {
+            document.querySelectorAll('.header-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelector(`.${activeClass}`).classList.add('active');
+        };
+
         const searchDirect = () => {
             const ivalue = document.querySelector('.search-input').value;
             window.location.href = `http://localhost:3000/?filter=search&val=${ivalue}`;
-        }
-        const homeDirect = () =>{
+            setActive('search');
+        };
+        const homeDirect = () => {
             window.location.href = 'http://localhost:3000/?filter=home';
-        }
-        const tvShowDirect = () =>{
+            setActive('home');
+        };
+        const tvShowDirect = () => {
             window.location.href = 'http://localhost:3000/?filter=tvshow';
-        }
-        const movieDirect = () =>{
+            setActive('t-show');
+        };
+        const movieDirect = () => {
             window.location.href = 'http://localhost:3000/?filter=movie';
-        }
-        const infoDirect = () =>{
+            setActive('movies');
+        };
+        const infoDirect = () => {
             window.location.href = 'http://localhost:3000/info';
-        }
+            setActive('info');
+        };
+
+        // Highlight the appropriate section based on the current URL
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const filter = urlParams.get('filter');
+            if (filter) {
+                setActive(filter);
+            }
+        });
     </script>
-    <section class="title">
-        <span>Movie Inventory</span>
-    </section>
-    <section class="home" >
-        <span onclick="homeDirect()">Home</span>
-    </section>
-    <section class="t-show">
-        <span onclick="tvShowDirect()">Tv Shows</span>
-    </section>
-    <section class="movies">
-        <span" onclick="movieDirect()">Movies</span>
-    </section>
-    <section class="info">
-        <span onclick="infoDirect()">INFO</span>
-    </section>
-    <section class="search">
-        <input type="text" name="searchName" placeholder="Ex. Shrek" class="search-input">
-        <button type="submit" class="search-button" onclick="searchDirect()">Search</button>
-    </section>
-</header>
+</head>
+<body>
+    <header class="head-container">
+        <section class="title header-section">
+            <span>Movie Inventory</span>
+        </section>
+        <section class="home header-section">
+            <span onclick="homeDirect()">Home</span>
+        </section>
+        <section class="t-show header-section">
+            <span onclick="tvShowDirect()">Tv Shows</span>
+        </section>
+        <section class="movies header-section">
+            <span onclick="movieDirect()">Movies</span>
+        </section>
+        <section class="info header-section">
+            <span onclick="infoDirect()">INFO</span>
+        </section>
+        <section class="search header-section">
+            <input type="text" name="searchName" placeholder="Ex. Shrek" class="search-input">
+            <button type="submit" class="search-button" onclick="searchDirect()">Search</button>
+        </section>
+    </header>
+</body>
+</html>

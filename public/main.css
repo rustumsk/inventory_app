@@ -10,6 +10,22 @@
   font-family: "Bebas Neue";
 }
 
+.header-section {
+  position: relative;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.header-section.active {
+  background-color: #BB1D24;
+  color: #F5F5F1;
+  border-radius: 0.25rem;
+}
+
+.header-section.active span {
+  font-weight: bold;
+}
+
 .f-content a {
   color: #E50914;
   text-decoration: none;
@@ -46,6 +62,7 @@ body {
 .home .head-container .home, .home .head-container .t-show, .home .head-container .movies, .home .head-container .info {
   flex: 1;
   font-size: 1.5rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 .home .head-container .search {
   flex: 2.5;
@@ -179,6 +196,22 @@ body {
   font-family: "Bebas Neue";
 }
 
+.header-section {
+  position: relative;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.header-section.active {
+  background-color: #BB1D24;
+  color: #F5F5F1;
+  border-radius: 0.25rem;
+}
+
+.header-section.active span {
+  font-weight: bold;
+}
+
 .f-content a {
   color: #E50914;
   text-decoration: none;
@@ -215,6 +248,7 @@ body {
 .sect .head-container .home, .sect .head-container .t-show, .sect .head-container .movies, .sect .head-container .info {
   flex: 1;
   font-size: 1.5rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 .sect .head-container .search {
   flex: 2.5;
@@ -311,6 +345,22 @@ body {
   font-family: "Bebas Neue";
 }
 
+.header-section {
+  position: relative;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.header-section.active {
+  background-color: #BB1D24;
+  color: #F5F5F1;
+  border-radius: 0.25rem;
+}
+
+.header-section.active span {
+  font-weight: bold;
+}
+
 .f-content a {
   color: #E50914;
   text-decoration: none;
@@ -347,6 +397,7 @@ body {
 .adds .head-container .home, .adds .head-container .t-show, .adds .head-container .movies, .adds .head-container .info {
   flex: 1;
   font-size: 1.5rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 .adds .head-container .search {
   flex: 2.5;
@@ -472,6 +523,22 @@ body {
   font-family: "Bebas Neue";
 }
 
+.header-section {
+  position: relative;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.header-section.active {
+  background-color: #BB1D24;
+  color: #F5F5F1;
+  border-radius: 0.25rem;
+}
+
+.header-section.active span {
+  font-weight: bold;
+}
+
 .f-content a {
   color: #E50914;
   text-decoration: none;
@@ -506,6 +573,7 @@ body {
 .update .head-container .home, .update .head-container .t-show, .update .head-container .movies, .update .head-container .info {
   flex: 1;
   font-size: 1.5rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 .update .head-container .search {
   flex: 2.5;
@@ -731,6 +799,22 @@ body {
   font-family: "Bebas Neue";
 }
 
+.header-section {
+  position: relative;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.header-section.active {
+  background-color: #BB1D24;
+  color: #F5F5F1;
+  border-radius: 0.25rem;
+}
+
+.header-section.active span {
+  font-weight: bold;
+}
+
 .f-content a {
   color: #E50914;
   text-decoration: none;
@@ -765,6 +849,7 @@ body {
 .delete .head-container .home, .delete .head-container .t-show, .delete .head-container .movies, .delete .head-container .info {
   flex: 1;
   font-size: 1.5rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 .delete .head-container .search {
   flex: 2.5;

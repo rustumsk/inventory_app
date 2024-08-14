@@ -20,8 +20,6 @@ const getHome = async (req, res) => {
             }
             return show;
         });
-
-        console.log(showArr[0].show_name); // For debugging
     }
     else if (choice === 'movie'){
         const t = await getMethods.getShowT('MOVIE');
@@ -72,8 +70,6 @@ const getHome = async (req, res) => {
             }
             return show;
         });
-
-        console.log(showArr[0].show_name); // For debugging
     }
     res.render('home', { choice, showArr,movieArr,tvShowArr,searchArr });
 }
