@@ -22,7 +22,8 @@ CREATE TABLE IF NOT EXISTS show(
     showcategory_id integer references showcategory(category_id),
     showcountry_id integer references showcountry(country_id),
     show_name varchar(255),
-    show_rating integer
+    show_rating integer,
+    data bytea
 );
 insert into showtype (type_name) values ('MOVIE'), ('TV_SHOW');
 

@@ -5,6 +5,7 @@ const app = express();
 const homeRouter = require('./routes/homeRoute');
 const movieRouter = require('./routes/moviesRoute');
 
+populate();
 require('dotenv').config();
 app.set("views", path.join(__dirname, "view"));
 app.set("view engine", "ejs");
