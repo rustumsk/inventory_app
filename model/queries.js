@@ -9,6 +9,15 @@ const getShows = async () =>{
         console.log(e);
     }
 }
+const getShowT = async (type) =>{
+    try{
+        const typeId = await pool.query('select type_id from showtype where type_name = $1', [type]);
+        return {rows} = await pool.query('SELECT * from show where show_type_id = $1', [typeId.rows[0].type_id]);
+    }
+    catch(e){
+        console.log(e);
+    }
+}
 const getDeleteShow = async () =>{
     try{
         return {rows} = await pool.query('SELECT show_id, show_name from show');
@@ -131,6 +140,23 @@ const getAllCategory = async () =>{
         console.log(e);
     }
 }
+const getShowByName = async (showname) =>{
+    try{
+        return {rows} = await pool.query('SELECT * from show where show_name = $1', [showname]);
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+const getImgs = async () =>{
+    try{
+        return {rows} = await pool.query('SELECT image_name, data from images');
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
 const getMethods = {
     getShows,
     getShowCategory,
@@ -143,6 +169,9 @@ const getMethods = {
     getCategories,
     getTypes,
     getDeleteShow,
+    getImgs,
+    getShowT,
+    getShowByName,
 }
 //READING ENDS HEREEE!!!!!!!!!!!!!!!!!!
 
@@ -169,7 +198,7 @@ const addCategory = async (categoryName) => {
     }
 }
 
-const addShow = async (showType, showCategory,showCountry, showTitle, showRating) => {
+const addShow = async (showType, showCategory,showCountry, showTitle, showRating,data) => {
     try{
         const tResult = await pool.query('SELECT type_id from showtype where type_name = $1', [showType]);
         const typeId = tResult.rows[0].type_id;
@@ -180,8 +209,8 @@ const addShow = async (showType, showCategory,showCountry, showTitle, showRating
         const coResult = await pool.query('Select country_id from showcountry where country_name = $1', [showCountry]);
         const countryId = coResult.rows[0].country_id;
 
-        await pool.query('INSERT INTO SHOW (show_type_id, showcategory_id, showcountry_id, show_name,show_rating) VALUES ($1,$2,$3,$4,$5)', 
-            [typeId,categoryId,countryId,showTitle,showRating]
+        await pool.query('INSERT INTO SHOW (show_type_id, showcategory_id, showcountry_id, show_name,show_rating,data) VALUES ($1,$2,$3,$4,$5,$6)', 
+            [typeId,categoryId,countryId,showTitle,showRating,data]
         );
         console.log('inserted!');
     }

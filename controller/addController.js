@@ -7,11 +7,12 @@ const aType = (req,res) =>{
 }
 const aShow = (req,res) =>{
 
-    const {originalname, buffer} = req.file;
+    const {buffer} = req.file;
 
     console.log(req.body.sType, req.body.sCategory, req.body.sCountry, req.body.sTitle, req.body.sRating);
-    addMethods.addShow(req.body.sType, req.body.sCategory, req.body.sCountry, req.body.sTitle, req.body.sRating);
-    addMethods.addImg(buffer,originalname);
+
+    addMethods.addShow(req.body.sType, req.body.sCategory, req.body.sCountry, req.body.sTitle, req.body.sRating,buffer);
+
     res.redirect('/info');
 }
 const aCategory = (req,res) =>{

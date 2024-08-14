@@ -31,7 +31,7 @@ body {
 }
 
 .home {
-  /* For smaller screens, adjust the number of columns */
+  /* Header Styling */
 }
 .home .head-container {
   height: 5rem;
@@ -108,10 +108,57 @@ body {
     grid-template-columns: 1fr; /* 1 column on very small screens */
   }
 }
-.home .home-container div {
-  display: grid;
-  place-content: center;
+.home .image-card {
+  position: relative;
+  overflow: hidden;
   background-color: black;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.home .image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+.home .image-card .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+.home .image-card:hover {
+  transform: scale(1.05);
+}
+.home .image-card:hover .info {
+  transform: translateY(0);
+}
+.home h1 {
+  background-color: #E50914;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  font-size: 2rem;
+  color: #F5F5F1;
+}
+.home h1.home {
+  color: #007bff; /* Optional: Different color for home page */
+}
+.home h1.search {
+  color: #28a745; /* Optional: Different color for search page */
+}
+.home h1.movie {
+  color: #ffc107; /* Optional: Different color for movies page */
+}
+.home h1.tvshow {
+  color: #dc3545; /* Optional: Different color for TV shows page */
 }
 .home .f-container {
   display: flex;
