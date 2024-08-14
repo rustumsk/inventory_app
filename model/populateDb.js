@@ -2,7 +2,7 @@ const {Client} = require('pg');
 
 require('dotenv').config();
 
-const connect = process.env.DEVCONNECT;
+const connect = process.env.PRODCONNECT;
 
 const SQL = `CREATE TABLE IF NOT EXISTS showtype(
     type_id integer primary key generated always as identity,
